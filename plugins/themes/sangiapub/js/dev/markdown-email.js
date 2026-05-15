@@ -34,6 +34,23 @@ $(document).ready(function() {
         $textarea.after($toggle).after($preview);
         
         // Function convert markdown simple
+        function escapeHtml(text) {
+            return String(text)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function sanitizeUrl(url) {
+            var trimmed = String(url || '').trim();
+            if (/^(https?:|mailto:|tel:|\/|#)/i.test(trimmed)) {
+                return trimmed.replace(/"/g, '%22');
+            }
+            return '#';
+        }
+
         function convertToHtml(text) {
             var escaped = String(text)
                 .replace(/&/g, '&amp;')

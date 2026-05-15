@@ -16,11 +16,20 @@ error_log
 # Editors
 .vscode/
 .idea/
+
+# Abaikan seluruh isi storage/cache/ kecuali .gitkeep di folder inti
+storage/cache/*
+!storage/cache/t_cache/.gitkeep
+!storage/cache/t_compile/.gitkeep
+!storage/cache/t_config/.gitkeep
+
 # Cache and temporary files
 /cache/
 tmp/
 temp/
 *.tmp
+*.json.gz
+*.wiz
 
 # Dependencies
 vendor/
