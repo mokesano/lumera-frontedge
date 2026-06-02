@@ -275,6 +275,25 @@ $(document).ready(function() {
     // Menemukan elemen dengan id "standardFooter"
     var footer = $('#standardFooter');
 
+    function getSafeHref(href) {
+        if (!href) {
+            return '#';
+        }
+
+        var trimmedHref = href.trim();
+        if (trimmedHref.charAt(0) === '#') {
+            return trimmedHref;
+        }
+
+        try {
+            var parsedUrl = new URL(trimmedHref, window.location.origin);
+            var allowedProtocols = ['http:', 'https:', 'mailto:', 'tel:'];
+            return allowedProtocols.indexOf(parsedUrl.protocol) !== -1 ? parsedUrl.href : '#';
+        } catch (e) {
+            return '#';
+        }
+    }
+
     if (footer.length) {
         // Menemukan semua elemen <a> dengan href eksternal
         footer.find('a[href^="http"]').each(function() {
@@ -291,7 +310,7 @@ $(document).ready(function() {
             footer.find('a[data-href]').each(function() {
                 var link = $(this);
                 // Mengembalikan href asli dari data-href
-                link.attr('href', link.attr('data-href'));
+                link.attr('href', getSafeHref(link.attr('data-href')));
                 link.removeAttr('data-href');
             });
         }
