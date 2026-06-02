@@ -1,8 +1,8 @@
-# 📰 ScholarEdge 1.0
+# 📰 Lumera Fontiers 1.0
 
 ### Platform Manajemen Editorial & Penerbitan Ilmiah Modern
 
-**ScholarEdge** adalah platform open‑source untuk manajemen editorial dan penerbitan ilmiah yang dibangun dengan arsitektur **Publisher‑Centric** modern, fleksibel, dan skalabel.
+**Lumera Fontiers** adalah platform open‑source untuk manajemen editorial dan penerbitan ilmiah yang dibangun dengan arsitektur **Publisher‑Centric** modern, fleksibel, dan skalabel.
 
 > *“Empowering Publishers with Modern Technology”*
 
@@ -37,15 +37,15 @@
 
 ---
 
-## 📖 Tentang ScholarEdge
+## 📖 Tentang Lumera Fontiers
 
-ScholarEdge 1.0 merupakan hasil **refactoring dan modernisasi total** dari basis kode **OJS 2.x**, dirancang ulang dengan prinsip‑prinsip pengembangan perangkat lunak terkini. Platform ini mengubah paradigma dari *Journal‑Centric* menjadi **Publisher‑Centric**, memungkinkan satu instalasi menaungi banyak penerbit (*multi‑publisher*) – bukan hanya banyak jurnal.
+Lumera Fontiers 1.0 merupakan hasil **refactoring dan modernisasi total** dari basis kode **OJS 2.x**, dirancang ulang dengan prinsip‑prinsip pengembangan perangkat lunak terkini. Platform ini mengubah paradigma dari *Journal‑Centric* menjadi **Publisher‑Centric**, memungkinkan satu instalasi menaungi banyak penerbit (*multi‑publisher*) – bukan hanya banyak jurnal.
 
 Dibangun di atas fondasi **Wizdam Kernel**, platform ini memisahkan secara jelas antara *Core Engine*, *Modules*, dan *Library Eksternal*, serta mengadopsi standar industri seperti Composer, PSR‑4 Autoloading, dan konfigurasi berbasis environment variable (`.env`). Hasilnya adalah sistem yang **ringkas, mudah dipahami, dan siap produksi**.
 
 ---
 
-## ✨ Mengapa ScholarEdge?
+## ✨ Mengapa Lumera Fontiers?
 
 | 🔧 Aspek | 🟡 OJS 2.x (Legacy) | 🟢 Wizdam 1.0 (Modern) |
 | :--- | :--- | :--- |
@@ -151,7 +151,7 @@ php -S localhost:8000 -t public/
 
 ## 🏗️ Sekilas Arsitektur
 
-ScholarEdge mengadopsi arsitektur **layered modular** yang memisahkan *core engine*, *business logic*, dan *presentation layer*:
+Lumera Fontiers mengadopsi arsitektur **layered modular** yang memisahkan *core engine*, *business logic*, dan *presentation layer*:
 
 ```
 Core Kernel   →   App Domain   →   Pages / API
@@ -270,7 +270,7 @@ Detail lengkap: [SECURITY.md](https://github.com/mokesano/wizdam-editorial/blob/
 
 ## 📄 Lisensi
 
-ScholarEdge dilisensikan di bawah **GNU General Public License v3.0** (GPL‑3.0). Lihat [LICENSE](https://github.com/mokesano/wizdam-editorial/blob/main/docs/LICENSE) untuk teks lengkap.
+Lumera Fontiers dilisensikan di bawah **GNU General Public License v3.0** (GPL‑3.0). Lihat [LICENSE](https://github.com/mokesano/wizdam-editorial/blob/main/docs/LICENSE) untuk teks lengkap.
 
 | Izin | Ketentuan |
 | :--- | :--- |
@@ -294,7 +294,7 @@ ScholarEdge dilisensikan di bawah **GNU General Public License v3.0** (GPL‑3.0
 
 ## 🙏 Ucapan Terima Kasih
 
-ScholarEdge dibangun di atas fondasi yang diletakkan oleh:
+Lumera Fontiers dibangun di atas fondasi yang diletakkan oleh:
 
 | 🏷️ Atribusi | 🔗 Referensi |
 | :--- | :--- |
@@ -308,7 +308,7 @@ ScholarEdge dibangun di atas fondasi yang diletakkan oleh:
 
 ## ⭐ Kontributor
 
-Terima kasih kepada semua kontributor yang telah membantu mengembangkan ScholarEdge!
+Terima kasih kepada semua kontributor yang telah membantu mengembangkan Lumera Fontiers!
 
 <a href="https://github.com/mokesano/wizdam-editorial/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=mokesano/wizdam-editorial" alt="Contributors" />
@@ -327,5 +327,5 @@ Terima kasih kepada semua kontributor yang telah membantu mengembangkan ScholarE
     <img src="https://img.shields.io/github/forks/mokesano/wizdam-editorial?style=social" alt="GitHub Forks">
   </a>
   <br><br>
-  <sub>© 2025–2026 Rochmady & ScholarEdge Team. Dilisensikan di bawah GPL‑3.0.</sub>
+  <sub>© 2025–2026 Rochmady & Lumera Fontiers Team. Dilisensikan di bawah GPL‑3.0.</sub>
 </p>

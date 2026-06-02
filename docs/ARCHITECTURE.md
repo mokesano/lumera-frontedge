@@ -1,6 +1,6 @@
-# Arsitektur ScholarEdge 1.0
+# Arsitektur Lumera Fontiers 1.0
 
-Dokumentasi lengkap tentang arsitektur, struktur direktori, dan desain sistem ScholarEdge.
+Dokumentasi lengkap tentang arsitektur, struktur direktori, dan desain sistem Lumera Fontiers.
 
 ---
 
@@ -19,7 +19,7 @@ Dokumentasi lengkap tentang arsitektur, struktur direktori, dan desain sistem Sc
 
 ## Overview
 
-ScholarEdge 1.0 dibangun dengan prinsip **Separation of Concerns** dan **Modular Design**, memisahkan dengan jelas antara:
+Lumera Fontiers 1.0 dibangun dengan prinsip **Separation of Concerns** dan **Modular Design**, memisahkan dengan jelas antara:
 
 1. **Core Engine** - Framework inti yang tidak bergantung pada bisnis logic spesifik
 2. **Application Layer** - Logika bisnis spesifik untuk manajemen publikasi
@@ -525,4 +525,4 @@ class AnalyticsServiceProvider extends ServiceProvider {
 
 ---
 
-© 2024 ScholarEdge Team
+© 2024 Lumera Fontiers Team

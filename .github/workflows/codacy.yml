@@ -42,7 +42,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # DIPERBARUI: Menghapus direktori cache, vendor, dan library bawaan OJS 2 (adodb, smarty) 
+      # DIPERBARUI: Menghapus direktori cache, vendor, dan library legacy (adodb, smarty) 
       # agar Codacy tidak kehabisan memori saat memindai kode usang pihak ketiga
       - name: Free up RAM & Remove 3rd-party libs
         run: rm -rf vendor/ node_modules/ cache/ lib/adodb/ lib/smarty/

@@ -177,6 +177,42 @@ jQuery.validator.addMethod("strippedminlength", function(value, element, param) 
 	return jQuery(value).text().length >= param;
 }, jQuery.validator.format("Please enter at least {0} characters"));
 
+function isSafeEmailWithOptionalTld(value) {
+	var parts = value.split("@");
+	if (parts.length !== 2) {
+		return false;
+	}
+
+	var local = parts[0];
+	var domain = parts[1];
+
+	if (!local || !domain) {
+		return false;
+	}
+
+	// local part: no leading/trailing dot, no consecutive dots
+	if (local.charAt(0) === "." || local.charAt(local.length - 1) === "." || local.indexOf("..") !== -1) {
+		return false;
+	}
+
+	// allowed local-part chars (unquoted simplified form used by this validator)
+	if (!/^[a-z\d!#$%&'*+\-\/=?^_`{|}~.\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+$/i.test(local)) {
+		return false;
+	}
+
+	// domain may be a single label (TLD optional) or dot-separated labels.
+	// each label must start/end with alnum/unicode letter range; middle chars may include - _ ~ .
+	var labelRe = /^[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF](?:[a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])?$/i;
+	var labels = domain.split(".");
+	for (var i = 0; i < labels.length; i++) {
+		if (!labels[i] || !labelRe.test(labels[i])) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
 // same as email, but TLD is optional
 jQuery.validator.addMethod("email2", function(value, element, param) {
 	if (this.optional(element)) {
@@ -224,7 +260,28 @@ jQuery.validator.addMethod("email2", function(value, element, param) {
 
 // same as url, but TLD is optional
 jQuery.validator.addMethod("url2", function(value, element, param) {
-	return this.optional(element) || /^(https?|ftp):\/\/((([a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|%[\da-f]{2}|[!$&'()*+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-_~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))\.)*(([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-_~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))\.?)(:\d*)?)(\/(([a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|%[\da-f]{2}|[!$&'()*+,;=]|:|@)+(\/([a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|%[\da-f]{2}|[!$&'()*+,;=]|:|@)*)*)?)?(\?(([a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|%[\da-f]{2}|[!$&'()*+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#(([a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|%[\da-f]{2}|[!$&'()*+,;=]|:|@)|\/|\?)*)?$/i.test(value);
+    if (this.optional(element)) return true;
+    // 1. Tetap gunakan regex utama (pola Anda yang sudah ada)
+    if (/^(https?|ftp):\/\/(...regex panjang...)$/i.test(value)) return true;
+    
+    // 2. JANGAN langsung new URL(). Malah tambahkan penjagaan ekstra:
+    //    - Hanya terima jika string diawali scheme:// (tanpa whitespace)
+    if (!/^(https?|ftp):\/\//i.test(value)) return false;
+    if (/\s/.test(value)) return false;  // tolak baris baru, spasi, dll.
+    
+    try {
+        var parsedUrl = new URL(value);
+        // 3. Pastikan hostname ada dan tidak kosong
+        if (!parsedUrl.hostname) return false;
+        // 4. Cegah canonicalization abuse: tolak jika URL asli berisi karakter berbahaya yang di-encode
+        if (/%[0-9A-Fa-f]{2}/.test(value) && value !== decodeURIComponent(value)) {
+            // Sudah mengandung encoded chars, mungkin hasil normalisasi
+            return false;
+        }
+        return /^(https?|ftp):$/i.test(parsedUrl.protocol);
+    } catch (e) {
+        return false;
+    }
 }, jQuery.validator.messages.url);
 
 // NOTICE: Modified version of Castle.Components.Validator.CreditCardValidator

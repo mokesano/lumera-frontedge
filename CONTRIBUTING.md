@@ -1,4 +1,4 @@
-# Contributing to ScholarEdge
+# Contributing to Lumera Fontiers
 
 First of all, thank you for contributing!
 
