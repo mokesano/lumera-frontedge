@@ -510,6 +510,13 @@ function getArticleComponents() {
   }
 }
 
+// Fungsi bantu: mengubah string HTML menjadi teks polos
+function htmlToPlainText(htmlString) {
+  const div = document.createElement('div');
+  div.innerHTML = htmlString;
+  return div.textContent;
+}
+
 // Fungsi utama untuk menampilkan highlight di halaman
 function displayArticleHighlights() {
   try {
@@ -552,32 +559,32 @@ function displayArticleHighlights() {
     // Cari atau buat elemen untuk daftar highlight
     let highlightsElement = containerElement.querySelector('ul.non-list');
     if (!highlightsElement) {
-      // Jika elemen tidak ditemukan, buat elemen baru
       highlightsElement = document.createElement('ul');
       highlightsElement.className = 'non-list';
       containerElement.appendChild(highlightsElement);
     }
     
-    // Buat HTML untuk highlight
-    let html = '';
-    
-    // Gunakan DOM API agar teks highlight tidak diinterpretasikan sebagai HTML
+    // Kosongkan daftar highlight sebelumnya (jika ada)
     highlightsElement.textContent = '';
-
+    
+    // Bangun setiap item highlight menggunakan DOM API untuk keamanan XSS
     for (let highlight of highlights) {
+      // Ubah highlight menjadi teks polos (mendekode entitas, menghapus tag)
+      const plainHighlight = htmlToPlainText(highlight);
+      
       const li = document.createElement('li');
       li.className = 'react-xocs-list-item';
-
+      
       const labelSpan = document.createElement('span');
       labelSpan.className = 'list-label';
       labelSpan.textContent = '• ';
-
+      
       const contentSpan = document.createElement('span');
       contentSpan.className = 'u-ml-16';
-
+      
       const p = document.createElement('p');
-      p.textContent = highlight;
-
+      p.textContent = plainHighlight; // Aman, tidak menjalankan HTML
+      
       contentSpan.appendChild(p);
       li.appendChild(labelSpan);
       li.appendChild(contentSpan);
