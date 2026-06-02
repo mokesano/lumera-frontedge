@@ -1,20 +1,19 @@
 {
-    "name": "wizdam/wizdam-editorial",
-    "description": "ScholarEdge - Modern Publisher Platform for Journal Management Framework Workflow and Publishing",
+    "name": "lumera/lumera-frontiers",
+    "description": "Lumera Frontiers - Modern Publisher Platform for Journal Management Framework Workflow and Publishing",
     "type": "project",
     "license": "GPL-3.0-only",
     "keywords": [
-        
+        "lumera",
         "publishing",
         "journal",
-        "open-access",
-        "wizdam"
+        "open-access"
     ],
-    "homepage": "https://wizdam.sangia.org/",
+    "homepage": "https://lumera.sangia.org/",
     "support": {
-        "issues": "https://github.com/mokesano/wizdam-editorial/issues",
-        "forum": "https://forum.wizdam.sangia.org/",
-        "source": "https://github.com/mokesano/wizdam-editorial"
+        "issues": "https://github.com/mokesano/lumera-frontiers/issues",
+        "forum": "https://forum.lumera.sangia.org/",
+        "source": "https://github.com/mokesano/lumera-frontiers"
     },
     "authors": [
         {
@@ -112,10 +111,10 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "@php -r \"echo 'ScholarEdge Platform installed successfully!\\n';\""
+            "@php -r \"echo 'Lumera Frontiers Platform installed successfully!\\n';\""
         ],
         "post-update-cmd": [
-            "@php -r \"echo 'ScholarEdge Platform updated successfully!\\n';\""
+            "@php -r \"echo 'Lumera Frontiers Platform updated successfully!\\n';\""
         ],
         "test": "phpunit",
         "cs-check": "phpcs --standard=PSR12 core/Library app",
@@ -127,6 +126,6 @@
     "repositories": [{
         "name": "wizdam-debug-toolbar",
         "type": "vcs",
-        "url": "https://github.com/mokesano/WizdamDebugToolbar"
+        "url": "https://github.com/mokesano/DebugToolbar"
     }]
 }
