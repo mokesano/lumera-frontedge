@@ -298,8 +298,8 @@ $(document).ready(function() {
         // Menemukan semua elemen <a> dengan href eksternal
         footer.find('a[href^="http"]').each(function() {
             var link = $(this);
-            // Menyimpan href asli dalam data-href dan mengosongkan href sementara
-            link.attr('data-href', link.attr('href'));
+            // Menyimpan href asli di jQuery data (bukan atribut DOM) dan mengosongkan href sementara
+            link.data('originalHref', link.attr('href'));
             link.attr('href', '#');
         });
     }
@@ -307,11 +307,14 @@ $(document).ready(function() {
     // Mengembalikan href asli setelah halaman selesai dimuat
     $(window).on('load', function() {
         if (footer.length) {
-            footer.find('a[data-href]').each(function() {
+            footer.find('a').each(function() {
                 var link = $(this);
-                // Mengembalikan href asli dari data-href
-                link.attr('href', getSafeHref(link.attr('data-href')));
-                link.removeAttr('data-href');
+                var originalHref = link.data('originalHref');
+                if (originalHref) {
+                    // Mengembalikan href asli dari jQuery data
+                    link.attr('href', getSafeHref(originalHref));
+                    link.removeData('originalHref');
+                }
             });
         }
     });
