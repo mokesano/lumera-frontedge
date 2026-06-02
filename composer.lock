@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "98f7c8a13495366df7c3e580e97dfd1b",
+    "content-hash": "983a9700fd9266a3b828620425158ead",
     "packages": [
         {
             "name": "adodb/adodb-php",
@@ -2171,17 +2171,17 @@
             "time": "2026-02-14T00:12:28+00:00"
         },
         {
-            "name": "wizdamdebug/debug-toolbar",
-            "version": "v1.0.2.0",
+            "name": "wizdam/debug-toolbar",
+            "version": "1.0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mokesano/DebugToolbar.git",
-                "reference": "b74e6b4cd464614da43d305cb45b201da5dbbba0"
+                "reference": "7d5c7ef19e544a2a14bc1edbded362af7bc0711e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mokesano/DebugToolbar/zipball/b74e6b4cd464614da43d305cb45b201da5dbbba0",
-                "reference": "b74e6b4cd464614da43d305cb45b201da5dbbba0",
+                "url": "https://api.github.com/repos/mokesano/DebugToolbar/zipball/7d5c7ef19e544a2a14bc1edbded362af7bc0711e",
+                "reference": "7d5c7ef19e544a2a14bc1edbded362af7bc0711e",
                 "shasum": ""
             },
             "require": {
@@ -2197,7 +2197,7 @@
             "type": "library",
             "extra": {
                 "wizdam": {
-                    "compatible-with": "OJS 2.4.8.5+",
+                    "compatible-with": "Lumera and legacy systems running PHP 8.0+",
                     "php-versions": [
                         "8.0",
                         "8.1",
@@ -2210,12 +2210,12 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WizdamDebugToolbar\\": "src/"
+                    "DebugToolbar\\": "src/"
                 }
             },
             "autoload-dev": {
                 "psr-4": {
-                    "WizdamDebugToolbar\\Tests\\": "tests/"
+                    "DebugToolbar\\Tests\\": "tests/"
                 }
             },
             "archive": {
@@ -2248,13 +2248,13 @@
                 "adodb",
                 "debug",
                 "debugbar",
-                "ojs",
+                "lumera",
                 "php84",
-                "toolbar",
-                "wizdam"
+                "sciecola",
+                "toolbar"
             ],
             "support": {
-                "source": "https://github.com/mokesano/DebugToolbar/tree/v1.0.2.0",
+                "source": "https://github.com/mokesano/DebugToolbar/tree/1.0.2.1",
                 "issues": "https://github.com/mokesano/DebugToolbar/issues"
             },
             "funding": [
@@ -2263,7 +2263,7 @@
                     "url": "https://github.com/mokesano"
                 }
             ],
-            "time": "2026-05-27T05:23:16+00:00"
+            "time": "2026-06-02T11:12:19+00:00"
         },
         {
             "name": "xendit/xendit-php",
@@ -4082,9 +4082,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "wizdamdebug/debug-toolbar": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

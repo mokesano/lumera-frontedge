@@ -58,7 +58,7 @@
         "symfony/var-dumper": "^6.0",
         "vlucas/phpdotenv": "^5.5",
         "wikimedia/less.php": "^5.5",
-        "wizdamdebug/debug-toolbar": "@dev",
+        "wizdam/debug-toolbar": "^1.0",
         "xendit/xendit-php": "^7.0"
     },
     "require-dev": {
