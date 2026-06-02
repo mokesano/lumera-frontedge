@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Plugins\generic\announcementFeed;
+
 /**
  * @file plugins/generic/announcementFeed/SettingsForm.inc.php
  *

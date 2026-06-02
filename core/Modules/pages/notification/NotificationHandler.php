@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\pages\notification;
+
 /**
  * @file pages/notification/NotificationHandler.inc.php
  *

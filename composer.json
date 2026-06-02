@@ -68,13 +68,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Wizdam\\Modules\\": [
+            "Lumera\\Modules\\": [
                 "core/Modules/"
             ],
-            "Wizdam\\Kernel\\": [
+            "Lumera\\Kernel\\": [
                 "core/Kernel/"
             ],
-            "Wizdam\\Core\\": [
+            "Lumera\\Core\\": [
                 "core/Includes/"
             ],
             "App\\Domain\\": [
@@ -93,26 +93,37 @@
                 "app/Helpers/"
             ]
         },
-        "classmap": [
-            "resources/smarty/plugins/",
-            "plugins/gateways/",
-            "plugins/generic/",
-            "plugins/importexport/",
-            "plugins/oaiMetadataFormats/",
-            "plugins/paymethod/"
-        ],
         "files": [
-            "core/Includes/functions.inc.php"
+            "core/Includes/functions.php"
         ],
         "exclude-from-classmap": [
             "**/node_modules/",
             "**/tests/",
-            "**/*.inc.php"
+            "**/*.inc.php",
+            "**/*_BAK",
+            "**/*_WIZDAM",
+            "core/Modules/cliTool/CliTool.php",
+            "core/Modules/xml/XMLParser.php",
+            "core/Modules/rt/RTStruct.php",
+            "core/Modules/recaptcha/recaptchalib.php",
+            "core/Modules/json/JSON.php",
+            "core/Modules/oai/OAIStruct.php",
+            "core/Modules/tools/install.php",
+            "core/Modules/tools/generateIdentifiers.php",
+            "core/Modules/tools/deleteSubmissions.php",
+            "core/Modules/tools/copyAccessLogFileTool.php",
+            "core/Modules/tools/upgrade.php",
+            "core/Modules/tools/migrateInvoices.php",
+            "core/Modules/mail/EmailTemplate.php",
+            "core/Modules/cache/MemcacheCache.php",
+            "core/Modules/cache/APCuCache.php",
+            "core/Modules/cache/GenericCache.php",
+            "core/Kernel/CoreProfiler.php"
         ]
     },
     "autoload-dev": {
         "psr-4": {
-            "Wizdam\\Tests\\": "tests/"
+            "Lumera\\Tests\\": "tests/"
         }
     },
     "config": {
@@ -138,9 +149,11 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
-    "repositories": [{
-        "name": "wizdam-debug-toolbar",
-        "type": "vcs",
-        "url": "https://github.com/mokesano/DebugToolbar"
-    }]
+    "repositories": [
+        {
+            "name": "wizdam-debug-toolbar",
+            "type": "vcs",
+            "url": "https://github.com/mokesano/DebugToolbar"
+        }
+    ]
 }

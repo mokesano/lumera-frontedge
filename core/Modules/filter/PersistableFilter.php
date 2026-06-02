@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\filter;
+
 /**
  * @file core.Modules.filter/PersistableFilter.inc.php
  *

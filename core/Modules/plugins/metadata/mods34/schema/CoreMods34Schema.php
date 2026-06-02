@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\plugins\metadata\mods34\schema;
+
 /**
  * @defgroup plugins_metadata_mods34_schema
  */

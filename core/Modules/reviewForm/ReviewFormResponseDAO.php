@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\reviewForm;
+
 /**
  * @file core.Modules.reviewForm/ReviewFormResponseDAO.inc.php
  *

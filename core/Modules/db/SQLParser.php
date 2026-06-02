@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\db;
+
 /**
  * @file core.Modules.db/SQLParser.inc.php
  *

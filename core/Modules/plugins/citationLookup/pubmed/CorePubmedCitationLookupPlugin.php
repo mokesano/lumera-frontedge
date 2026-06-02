@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\plugins\citationLookup\pubmed;
+
 /**
  * @defgroup plugins_citationLookup_pubmed
  */

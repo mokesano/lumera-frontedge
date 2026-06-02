@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\plugins\citationOutput\mla\filter;
+
 /**
  * @defgroup plugins_citationOutput_mla_filter
  */

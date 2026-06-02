@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\oai;
+
 /**
  * @file core.Modules.oai/CoreOAIDAO.inc.php
  * HIGH PERFORMANCE BASE: Enables Pre-loading for OAI

@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\i18n;
+
 /**
  * @defgroup i18n
  */

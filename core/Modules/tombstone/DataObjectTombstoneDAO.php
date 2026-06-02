@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\tombstone;
+
 /**
  * @file core.Modules.tombstone/DataObjectTombstoneDAO.inc.php
  *

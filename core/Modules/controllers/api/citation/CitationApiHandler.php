@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\controllers\api\citation;
+
 /**
  * @defgroup controllers_api_citation
  */

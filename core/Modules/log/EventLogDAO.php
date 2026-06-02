@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\log;
+
 /**
  * @file core.Modules.log/EventLogDAO.inc.php
  *

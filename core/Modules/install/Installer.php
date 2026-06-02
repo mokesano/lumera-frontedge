@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\install;
+
 /**
  * @file core.Modules.install/Installer.inc.php
  *

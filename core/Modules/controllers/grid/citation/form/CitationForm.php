@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\controllers\grid\citation\form;
+
 /**
  * @file core.Modules.controllers/grid/citation/form/CitationForm.inc.php
  *

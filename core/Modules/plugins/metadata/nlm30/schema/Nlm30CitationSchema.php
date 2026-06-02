@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\plugins\metadata\nlm30\schema;
+
 /**
  * @defgroup plugins_metadata_nlm30_schema
  */

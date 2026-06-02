@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Plugins\importexport\datacite\classes;
+
 /**
  * @file plugins/importexport/.../classes/DOIExportPlugin.inc.php
  *

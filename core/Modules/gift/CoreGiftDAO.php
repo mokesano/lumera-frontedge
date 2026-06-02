@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\gift;
+
 /**
  * @file core.Modules.gift/CoreGiftDAO.inc.php
  *

@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Plugins\importexport\mets;
+
 /**
  * @file plugins/importexport/mets/MetsExportDom.inc.php
  *

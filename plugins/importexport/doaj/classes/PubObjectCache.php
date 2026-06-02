@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Plugins\importexport\doaj\classes;
+
 /**
  * @file plugins/importexport/.../classes/PubObjectCache.inc.php
  *

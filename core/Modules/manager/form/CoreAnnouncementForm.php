@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\manager\form;
+
 /**
  * @file core.Modules.manager/form/CoreAnnouncementForm.inc.php
  *

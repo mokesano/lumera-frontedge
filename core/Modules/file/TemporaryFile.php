@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\file;
+
 /**
  * @file core.Modules.file/TemporaryFile.inc.php
  *

@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\admin\form;
+
 /**
  * @defgroup admin_form
  */

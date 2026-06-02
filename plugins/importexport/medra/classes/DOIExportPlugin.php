@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Plugins\importexport\medra\classes;
+
 /**
  * @file plugins/importexport/common/classes/DOIExportPlugin.inc.php
  *
