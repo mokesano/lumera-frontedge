@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\plugins\citationLookup\pubmed\filter;
+
 /**
  * @file plugins/citationLookup/pubmed/filter/PubmedNlm30CitationSchemaFilter.inc.php
  *

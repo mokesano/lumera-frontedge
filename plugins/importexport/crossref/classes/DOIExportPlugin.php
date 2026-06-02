@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Plugins\importexport\crossref\classes;
+
 /**
  * @file plugins/importexport/crossref/classes/DOIExportPlugin.inc.php
  *

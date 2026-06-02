@@ -1,6 +1,6 @@
-# Panduan Instalasi ScholarEdge 1.0
+# Panduan Instalasi Lumera Fontiers 1.0
 
-Panduan lengkap untuk menginstal ScholarEdge 1.0 di berbagai lingkungan.
+Panduan lengkap untuk menginstal Lumera Fontiers 1.0 di berbagai lingkungan.
 
 ---
 
@@ -482,4 +482,4 @@ Setelah instalasi berhasil:
 
 ---
 
-© 2024 ScholarEdge Team
+© 2024 Lumera Fontiers Team

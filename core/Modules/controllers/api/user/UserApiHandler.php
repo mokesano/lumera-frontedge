@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\controllers\api\user;
+
 /**
  * @defgroup controllers_api_user
  */

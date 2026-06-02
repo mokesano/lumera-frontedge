@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\cache;
+
 /**
  * @file core.Modules.cache/MemcacheCache.inc.php
  *

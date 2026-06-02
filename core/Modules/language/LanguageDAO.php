@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\language;
+
 /**
  * @file core.Modules.language/LanguageDAO.inc.php
  *

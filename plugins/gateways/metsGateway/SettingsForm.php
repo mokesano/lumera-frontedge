@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Plugins\gateways\metsGateway;
+
 /**
  * @file plugins/gateways/metsGateway/SettingsForm.inc.php
  *

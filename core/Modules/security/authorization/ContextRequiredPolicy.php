@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\security\authorization;
+
 /**
  * @file core.Modules.security/authorization/ContextRequiredPolicy.inc.php
  *

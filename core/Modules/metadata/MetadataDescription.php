@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\metadata;
+
 /**
  * @file core.Modules.metadata/MetadataDescription.inc.php
  *

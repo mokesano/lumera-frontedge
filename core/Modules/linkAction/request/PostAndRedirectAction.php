@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\linkAction\request;
+
 /**
  * @file core.Modules.linkAction/request/PostAndRedirectAction.inc.php
  *

@@ -2269,6 +2269,12 @@ $(document).ready(function() {
         show ? $('body').append(loadingSvg) : $('.loading-indicator').remove();
     };
 
+    const stripHtmlToText = value => {
+        const temp = document.createElement('div');
+        temp.innerHTML = value;
+        return (temp.textContent || '').trim();
+    };
+
     const extractTitle = content => {
         const yearPattern = /\b\d{4}[a-z]?\b/;
         const yearMatch = content.match(yearPattern);
@@ -2277,7 +2283,7 @@ $(document).ready(function() {
             const titleStart = content.indexOf('. ', yearIndex) + 2;
             let titleEnd = content.indexOf('. ', titleStart);
             if (titleEnd === -1) titleEnd = content.length;
-            return content.substring(titleStart, titleEnd).trim().replace(/<[^>]*>/g, '');
+            return stripHtmlToText(content.substring(titleStart, titleEnd));
         }
         return '';
     };

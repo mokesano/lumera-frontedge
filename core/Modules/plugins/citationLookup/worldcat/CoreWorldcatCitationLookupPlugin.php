@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\plugins\citationLookup\worldcat;
+
 /**
  * @defgroup plugins_citationLookup_worldcat
  */

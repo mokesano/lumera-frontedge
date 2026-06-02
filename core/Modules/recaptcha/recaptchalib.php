@@ -1,4 +1,8 @@
 <?php
+declare(strict_types=1);
+
+namespace Lumera\Modules\recaptcha;
+
 /*
  * This is a PHP library that handles calling reCAPTCHA.
  *    - Documentation and latest version

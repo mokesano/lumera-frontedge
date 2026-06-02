@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\currency;
+
 /**
  * @file core.Modules.currency/CurrencyDAO.inc.php
  *

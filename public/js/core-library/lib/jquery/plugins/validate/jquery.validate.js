@@ -998,8 +998,34 @@ $.extend($.validator, {
 
 		// http://docs.jquery.com/Plugins/Validation/Methods/url
 		url: function(value, element) {
-			// contributed by Scott Gonzalez: http://projects.scottsplayground.com/iri/
-			return this.optional(element) || /^(https?|ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(value);
+			// Kontribusi asli: Scott Gonzalez
+			// Regex panjang dipertahankan HANYA sebagai komentar atau referensi,
+			// karena dapat memicu catastrophic backtracking pada input tertentu.
+			// Sekarang kita gunakan URL parsing dengan guard ketat.
+
+			if (this.optional(element)) {
+				return true;
+			}
+
+			// 1. Tolak semua input yang mengandung whitespace (termasuk newline, tab)
+			if (/\s/.test(value)) {
+				return false;
+			}
+
+			// 2. Pastikan string DIAWALI dengan scheme:// (bukan scheme: saja)
+			//    Ini mencegah http:example.com lolos.
+			if (!/^(https?|ftp):\/\//i.test(value)) {
+				return false;
+			}
+
+			// 3. Gunakan new URL() hanya untuk memverifikasi bahwa URL valid secara struktural
+			try {
+				var parsed = new URL(value);
+				// Protokol harus http/https/ftp (setelah parsing, properti protocol mengandung titik dua)
+				return /^(https?|ftp):$/i.test(parsed.protocol);
+			} catch (e) {
+				return false;
+			}
 		},
 
 		// http://docs.jquery.com/Plugins/Validation/Methods/date

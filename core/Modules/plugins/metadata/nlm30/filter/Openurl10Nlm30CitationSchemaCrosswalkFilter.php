@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\plugins\metadata\nlm30\filter;
+
 /**
  * @file plugins/metadata/nlm30/filter/Openurl10Nlm30CitationSchemaCrosswalkFilter.inc.php
  *

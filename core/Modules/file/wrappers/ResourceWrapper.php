@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\file\wrappers;
+
 /**
  * @file core.Modules.file/wrappers/ResourceWrapper.inc.php
  *

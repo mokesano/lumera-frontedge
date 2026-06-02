@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Plugins\generic\customBlockManager;
+
 /**
  * @file plugins/generic/customBlockManager/SettingsForm.inc.php
  *

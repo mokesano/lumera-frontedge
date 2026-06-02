@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\codelist;
+
 /**
  * @file core.Modules.codelist/SubjectDAO.inc.php
  *

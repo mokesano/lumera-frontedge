@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\config;
+
 /**
  * @file core.Modules.config/ConfigParser.inc.php
  *
