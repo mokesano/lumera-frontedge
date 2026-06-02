@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\validation;
+
 /**
  * @file core.Modules.classes/validation/ValidatorCSRF.inc.php
  *

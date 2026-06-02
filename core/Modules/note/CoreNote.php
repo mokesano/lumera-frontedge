@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\note;
+
 /**
  * @file core.Modules.note/CoreNote.inc.php
  *

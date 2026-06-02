@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\controllers\grid\filter\form;
+
 /**
  * @file core.Modules.controllers/grid/filter/form/FilterForm.inc.php
  *

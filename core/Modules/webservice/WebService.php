@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\webservice;
+
 /**
  * @file core.Modules.citation/WebService.inc.php
  *

@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\pages\install;
+
 /**
  * @file pages/install/CoreInstallHandler.inc.php
  *

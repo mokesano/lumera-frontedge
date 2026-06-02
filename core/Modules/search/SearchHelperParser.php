@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\search;
+
 /**
  * @file core.Modules.search/SearchHelperParser.inc.php
  *

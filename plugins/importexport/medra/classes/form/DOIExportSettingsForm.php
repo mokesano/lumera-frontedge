@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Plugins\importexport\medra\classes\form;
+
 /**
  * @file plugins/importexport/.../classes/form/DOIExportSettingsForm.inc.php
  *

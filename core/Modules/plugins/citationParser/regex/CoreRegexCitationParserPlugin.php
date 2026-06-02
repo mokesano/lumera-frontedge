@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\plugins\citationParser\regex;
+
 /**
  * @defgroup plugins_citationParser_regex
  */

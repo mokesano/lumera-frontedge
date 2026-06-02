@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\process;
+
 /**
  * @file core.Modules.process/ProcessDAO.inc.php
  *

@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Plugins\generic\dataverse\classes\form;
+
 /**
  * @file plugins/generic/dataverse/classes/form/SettingsForm.inc.php
  *

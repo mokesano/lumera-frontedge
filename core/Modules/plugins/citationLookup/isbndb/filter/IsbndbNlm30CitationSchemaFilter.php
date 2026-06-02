@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\plugins\citationLookup\isbndb\filter;
+
 /**
  * @defgroup plugins_citationLookup_isbndb_filter
  */

@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\plugins\metadata\dc11\schema;
+
 /**
  * @defgroup plugins_metadata_dc11_schema
  */

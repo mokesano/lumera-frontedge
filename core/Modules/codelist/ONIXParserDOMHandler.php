@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\codelist;
+
 /**
  * @file core.Modules.codelist/ONIXParserDOMHandler.inc.php
  *
@@ -60,7 +62,7 @@ class ONIXParserDOMHandler extends XMLParserDOMHandler {
                 E_USER_DEPRECATED
             );
         }
-        self::__construct(string $listName);
+        self::__construct($listName);
     }
 
     /**

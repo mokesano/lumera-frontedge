@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\handler\validation;
+
 /**
  * @file core.Modules.handler/HandlerValidatorRoles.inc.php
  *

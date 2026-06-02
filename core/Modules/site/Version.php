@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\site;
+
 /**
  * @file core.Modules.site/Version.inc.php
  *

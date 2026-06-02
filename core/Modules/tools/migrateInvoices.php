@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\tools;
+
 /**
  * @file tools/migrateInvoices.php
  * @brief CLI tool untuk migrasi Queued & Completed Payments secara sekuensial.

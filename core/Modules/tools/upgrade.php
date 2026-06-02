@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\tools;
+
 /**
  * @file core/Modules/tools/upgrade.php
  *

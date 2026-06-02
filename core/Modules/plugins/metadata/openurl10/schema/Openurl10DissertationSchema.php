@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\plugins\metadata\openurl10\schema;
+
 /**
  * @defgroup plugins_metadata_openurl10_schema
  */

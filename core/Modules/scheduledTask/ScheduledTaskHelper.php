@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\scheduledTask;
+
 /**
  * @file core.Modules.scheduledTask/ScheduledTaskHelper.inc.php
  *
