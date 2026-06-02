@@ -1,7 +1,10 @@
-```
+# Lumera Frontiers .gitignore
+
 # Dependencies
 vendor/
-composer.lock
+core/Libraries/
+core/Library/
+node_modules/
 
 # Logs
 *.log
@@ -44,6 +47,7 @@ target/
 # Cache
 .cache/
 .phpunit.result.cache
+
 # IDE specific
 .idea/
 .vscode/
@@ -51,4 +55,3 @@ target/
 # PHP specific
 *.php~
 phpunit.xml.dist
-```
