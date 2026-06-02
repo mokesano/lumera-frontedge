@@ -1,53 +1,53 @@
 # Lumera Frontiers .gitignore
 
-# Dependencies
-vendor/
-core/Libraries/
-core/Library/
-node_modules/
-
-# Logs
-*.log
-error_log
-*.err
-
-# Environment
-.env
-.env.local
-.env.*
-
-# Editors
-.vscode/
-.idea/
+# PHP compiled files
+*.phpc
 
 # Abaikan seluruh isi storage/cache/ kecuali .gitkeep di folder inti
 storage/cache/*
 !storage/cache/t_cache/.gitkeep
 !storage/cache/t_compile/.gitkeep
 !storage/cache/t_config/.gitkeep
+**/cache/*
+!**/cache/.gitkeep
 
-# Cache and temporary files
-/cache/
-tmp/
-temp/
-*.tmp
+# Abaikan semua file .json.gz di seluruh repositori
 *.json.gz
-*.wiz
+*.gz
+*.cache
 
-# Build artifacts
-dist/
-build/
-target/
-*.phar
+# Dependencies
+vendor/
+core/Libraries/
+core/Library/
+node_modules/
 
-# Cache
-.cache/
-.phpunit.result.cache
+# Compiled and build artifacts
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.out
 
-# IDE specific
-.idea/
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Editors
 .vscode/
+.idea/
 
-# PHP specific
-*.php~
-phpunit.xml.dist
+# Cache directories
+.cache/
+__pycache__/
+*.pyc
+*.pyo
+.Python
