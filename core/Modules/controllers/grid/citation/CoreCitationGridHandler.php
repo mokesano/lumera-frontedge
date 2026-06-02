@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\controllers\grid\citation;
+
 /**
  * @file controllers/grid/citation/CoreCitationGridHandler.inc.php
  *

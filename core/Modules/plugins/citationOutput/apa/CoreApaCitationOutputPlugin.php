@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\plugins\citationOutput\apa;
+
 /**
  * @defgroup plugins_citationOutput_apa
  */

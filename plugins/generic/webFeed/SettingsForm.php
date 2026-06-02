@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Plugins\generic\webFeed;
+
 /**
  * @file plugins/generic/webFeed/SettingsForm.inc.php
  *

@@ -666,6 +666,16 @@ function shortenHighlight(text, language) {
   return shortened;
 }
 
+// Escape karakter khusus agar teks aman saat dimasukkan ke innerHTML
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 // Fungsi untuk mendapatkan judul dan abstrak dari halaman artikel
 function getArticleComponents() {
   try {
@@ -775,6 +785,7 @@ function displayArticleHighlights() {
     let html = '';
     
     for (let highlight of highlights) {
+      const safeHighlight = escapeHtml(highlight);
       html += `
         <li class="react-xocs-list-item">
           <span class="list-label">• </span>
@@ -929,7 +940,7 @@ $(document).ready(function() {
             const titleStart = content.indexOf('. ', yearIndex) + 2;
             let titleEnd = content.indexOf('. ', titleStart);
             if (titleEnd === -1) titleEnd = content.length;
-            return content.substring(titleStart, titleEnd).trim().replace(/<[^>]*>/g, '');
+            return content.substring(titleStart, titleEnd).trim().replace(/[<>]/g, '');
         }
         return '';
     };
@@ -969,7 +980,7 @@ $(document).ready(function() {
 
     const disableActiveLinks = element => $(element).find('a').each(function() {
         const text = $(this).text();
-        $(this).replaceWith(text);
+        $(this).replaceWith(document.createTextNode(text));
     });
 
     const processVisibleReferences = () => {
@@ -1031,7 +1042,15 @@ $(document).ready(function() {
             const httpMatches = content.match(/https?:\/\/[^\s]+|www\.[^\s]+/g);
             if (httpMatches) {
                 httpMatches.forEach(httpUrl => {
-                    if (!httpUrl.includes('doi.org')) addLinkWithLoading(referenceLinks, httpUrl, 'View Source', '<svg focusable="false" viewBox="0 0 8 8" height="20" aria-label="Opens in new window" class="icon icon-arrow-up-right-tiny arrow-external-link"><path d="M1.12949 2.1072V1H7V6.85795H5.89111V2.90281L0.784057 8L0 7.21635L5.11902 2.1072H1.12949Z"></path></svg>');
+                    try {
+                        const normalizedHttpUrl = httpUrl.startsWith('www.') ? ('https://' + httpUrl) : httpUrl;
+                        const parsedHttpUrl = new URL(normalizedHttpUrl);
+                        const hostname = parsedHttpUrl.hostname.toLowerCase();
+                        const isDoiHost = hostname === 'doi.org' || hostname.endsWith('.doi.org');
+                        if (!isDoiHost) addLinkWithLoading(referenceLinks, httpUrl, 'View Source', '<svg focusable="false" viewBox="0 0 8 8" height="20" aria-label="Opens in new window" class="icon icon-arrow-up-right-tiny arrow-external-link"><path d="M1.12949 2.1072V1H7V6.85795H5.89111V2.90281L0.784057 8L0 7.21635L5.11902 2.1072H1.12949Z"></path></svg>');
+                    } catch (e) {
+                        addLinkWithLoading(referenceLinks, httpUrl, 'View Source', '<svg focusable="false" viewBox="0 0 8 8" height="20" aria-label="Opens in new window" class="icon icon-arrow-up-right-tiny arrow-external-link"><path d="M1.12949 2.1072V1H7V6.85795H5.89111V2.90281L0.784057 8L0 7.21635L5.11902 2.1072H1.12949Z"></path></svg>');
+                    }
                 });
             }
 

@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Kernel;
+
 /**
  * @file core.Modules.classes/core/CoreStats.inc.php
  * 

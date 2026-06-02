@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\plugins\citationParser\parscit;
+
 /**
  * @defgroup plugins_citationParser_parscit
  */

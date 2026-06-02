@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\pages\help;
+
 /**
  * @file core.Modules.pages/help/HelpHandler.inc.php
  *
@@ -14,8 +16,6 @@ declare(strict_types=1);
  * @brief [WIZDAM CORE] Handle requests for viewing help pages + Chatbox Logic.
  * Refactored for Wizdam Fork v3.2 Protocol (PHP 8.1+ Strict).
  */
-
-declare(strict_types=1);
 
 // Define Defaults
 if (!defined('HELP_DEFAULT_TOPIC')) define('HELP_DEFAULT_TOPIC', 'index/topic/000000');

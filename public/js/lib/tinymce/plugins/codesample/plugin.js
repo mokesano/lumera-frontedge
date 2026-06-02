@@ -1,15 +1,7 @@
 /**
- * TinyMCE version 6.8.6 (TBD)
+ * TinyMCE version 7.2.0 (2024-06-19)
  */
 
-/**
- * Prism: Lightweight, robust, elegant syntax highlighting
- *
- * @license MIT <https://opensource.org/licenses/MIT>
- * @author Lea Verou <https://lea.verou.me>
- * @namespace
- * @public
- */
 (function () {
     'use strict';
 
@@ -1060,7 +1052,7 @@
             inside: { 'punctuation': /\./ }
           },
           'type-expression': {
-            pattern: re(/(\b(?:default|sizeof|typeof)\s*\(\s*(?!\s))(?:[^()\s]|\s(?!\s)|<<0>>)*(?=\s*\))/.source, [nestedRound]),
+            pattern: re(/(\b(?:default|sizeof|typeof)\s*\(\s*(?!\s))(?:<<0>>|[^<()])*(?=\s*\))/.source, [nestedRound]),
             lookbehind: true,
             alias: 'class-name',
             inside: typeInside
@@ -1208,13 +1200,13 @@
         Prism.languages.insertBefore('csharp', 'string', {
           'interpolation-string': [
             {
-              pattern: re(/(^|[^\\])(?:\$@|@\$)"(?:""|\\[\s\S]|\{\{|<<0>>|[^\\{"])*"/.source, [mInterpolation]),
+              pattern: re(/(^|[^\\])(?:\$@|@\$)"(?:""|\\[\s\S]|\{\{|<<0>>|[^\\{"<])*"/.source, [mInterpolation]),
               lookbehind: true,
               greedy: true,
               inside: createInterpolationInside(mInterpolation, mInterpolationRound)
             },
             {
-              pattern: re(/(^|[^@\\])\$"(?:\\.|\{\{|<<0>>|[^\\"{])*"/.source, [sInterpolation]),
+              pattern: re(/(^|[^@\\])\$"(?:\\.|\{\{|<<0>>|[^\\"{<])*"/.source, [sInterpolation]),
               lookbehind: true,
               greedy: true,
               inside: createInterpolationInside(sInterpolation, sInterpolationRound)

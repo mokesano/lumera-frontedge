@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\controlledVocab;
+
 /**
  * @file core.Modules.controlledVocab/ControlledVocabEntry.inc.php
  *

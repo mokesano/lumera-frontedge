@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\pages\announcement;
+
 /**
  * @file pages/announcement/CoreAnnouncementHandler.inc.php
  *

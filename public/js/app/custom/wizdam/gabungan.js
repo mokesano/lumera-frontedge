@@ -275,6 +275,21 @@ $(document).ready(function() {
     // Menemukan elemen dengan id "standardFooter"
     var footer = $('#standardFooter');
 
+    function getSafeHttpHref(rawHref) {
+        if (!rawHref) {
+            return '#';
+        }
+
+        try {
+            var parsed = new URL(rawHref, window.location.origin);
+            if (parsed.protocol === 'http:' || parsed.protocol === 'https:') {
+                return parsed.href;
+            }
+        } catch (e) {}
+
+        return '#';
+    }
+
     if (footer.length) {
         // Menemukan semua elemen <a> dengan href eksternal
         footer.find('a[href^="http"]').each(function() {
@@ -291,7 +306,8 @@ $(document).ready(function() {
             footer.find('a[data-href]').each(function() {
                 var link = $(this);
                 // Mengembalikan href asli dari data-href
-                link.attr('href', link.attr('data-href'));
+                var restoredHref = getSafeHttpHref(link.attr('data-href'));
+                link.attr('href', restoredHref);
                 link.removeAttr('data-href');
             });
         }

@@ -1,6 +1,6 @@
-# Panduan Migrasi OJS 2.x ke Editorial Pro 1.0
+# Panduan Migrasi OJS 2.x ke Lumera Fontiers 1.0
 
-Panduan lengkap untuk melakukan migrasi dari Open Journal Systems (OJS) 2.x ke Editorial Pro 1.0.
+Panduan lengkap untuk melakukan migrasi dari Open Journal Systems (OJS) 2.x ke Lumera Fontiers 1.0.
 
 ---
 
@@ -19,7 +19,7 @@ Panduan lengkap untuk melakukan migrasi dari Open Journal Systems (OJS) 2.x ke E
 
 ## Overview Migrasi
 
-Editorial Pro 1.0 adalah hasil refactoring total dari OJS 2.x dengan perubahan fundamental:
+Lumera Fontiers 1.0 adalah hasil refactoring total dari OJS 2.x dengan perubahan fundamental:
 
 ### Apa yang Berubah?
 
@@ -728,6 +728,6 @@ Setelah migrasi selesai:
 
 ---
 
-© 2024 Editorial Pro Team
+© 2024 Lumera Fontiers Team
 
 *Migrasi yang sukses adalah kunci transformasi digital Anda!*

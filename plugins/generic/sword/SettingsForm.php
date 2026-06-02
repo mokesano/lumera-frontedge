@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Plugins\generic\sword;
+
 /**
  * @file plugins/generic/sword/SettingsForm.inc.php
  *

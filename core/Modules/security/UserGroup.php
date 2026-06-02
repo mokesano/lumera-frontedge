@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\security;
+
 /**
  * @file core.Modules.security/UserGroup.inc.php
  *

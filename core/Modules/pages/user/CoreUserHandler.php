@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\pages\user;
+
 /**
  * @file pages/user/CoreUserHandler.inc.php
  *

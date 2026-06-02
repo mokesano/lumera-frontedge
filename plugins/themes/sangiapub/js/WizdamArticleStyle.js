@@ -1837,18 +1837,28 @@ document.addEventListener("DOMContentLoaded", function() {
           containerElement.appendChild(highlightsElement);
         }
         
-        // Buat HTML untuk highlight sesuai struktur yang sudah ada
-        let html = '';
+        // Buat daftar highlight sesuai struktur yang sudah ada (aman, tanpa innerHTML)
+        highlightsElement.textContent = '';
         
         for (let highlight of highlights) {
-          html += `
-            <li class="react-xocs-list-item">
-              <span class="list-label">• </span>
-              <span class="u-ml-16"><p>${highlight}</p></span>
-            </li>`;
+          const li = document.createElement('li');
+          li.className = 'react-xocs-list-item';
+
+          const labelSpan = document.createElement('span');
+          labelSpan.className = 'list-label';
+          labelSpan.textContent = '• ';
+
+          const contentSpan = document.createElement('span');
+          contentSpan.className = 'u-ml-16';
+
+          const p = document.createElement('p');
+          p.textContent = highlight;
+
+          contentSpan.appendChild(p);
+          li.appendChild(labelSpan);
+          li.appendChild(contentSpan);
+          highlightsElement.appendChild(li);
         }
-        
-        highlightsElement.innerHTML = html;
         
         // Tampilkan elemen highlight jika sebelumnya tersembunyi
         const highlightSection = document.getElementById('ab810');
@@ -2390,7 +2400,15 @@ $(document).ready(function() {
             const httpMatches = content.match(/https?:\/\/[^\s]+|www\.[^\s]+/g);
             if (httpMatches) {
                 httpMatches.forEach(httpUrl => {
-                    if (!httpUrl.includes('doi.org')) addLinkWithLoading(referenceLinks, httpUrl, 'View Source', '<svg focusable="false" viewBox="0 0 8 8" height="20" aria-label="Opens in new window" class="icon icon-arrow-up-right-tiny arrow-external-link"><path d="M1.12949 2.1072V1H7V6.85795H5.89111V2.90281L0.784057 8L0 7.21635L5.11902 2.1072H1.12949Z"></path></svg>');
+                    try {
+                        const normalizedUrl = httpUrl.startsWith('www.') ? 'https://' + httpUrl : httpUrl;
+                        const parsedUrl = new URL(normalizedUrl);
+                        const host = parsedUrl.hostname.toLowerCase();
+                        const isDoiHost = host === 'doi.org' || host.endsWith('.doi.org');
+                        if (!isDoiHost) addLinkWithLoading(referenceLinks, httpUrl, 'View Source', '<svg focusable="false" viewBox="0 0 8 8" height="20" aria-label="Opens in new window" class="icon icon-arrow-up-right-tiny arrow-external-link"><path d="M1.12949 2.1072V1H7V6.85795H5.89111V2.90281L0.784057 8L0 7.21635L5.11902 2.1072H1.12949Z"></path></svg>');
+                    } catch (e) {
+                        addLinkWithLoading(referenceLinks, httpUrl, 'View Source', '<svg focusable="false" viewBox="0 0 8 8" height="20" aria-label="Opens in new window" class="icon icon-arrow-up-right-tiny arrow-external-link"><path d="M1.12949 2.1072V1H7V6.85795H5.89111V2.90281L0.784057 8L0 7.21635L5.11902 2.1072H1.12949Z"></path></svg>');
+                    }
                 });
             }
 

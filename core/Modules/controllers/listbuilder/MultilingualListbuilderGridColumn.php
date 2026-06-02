@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\controllers\listbuilder;
+
 /**
  * @file core.Modules.controllers/listbuilder/MultilingualListbuilderGridColumn.inc.php
  *

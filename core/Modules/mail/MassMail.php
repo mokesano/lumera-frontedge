@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\mail;
+
 /**
  * @file core.Modules.mail/MassMail.inc.php
  *

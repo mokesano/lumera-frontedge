@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\plugins\citationOutput\vancouver\filter;
+
 /**
  * @defgroup plugins_citationOutput_vancouver_filter
  */

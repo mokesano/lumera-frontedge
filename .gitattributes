@@ -1,0 +1,7 @@
+# Lumera Edge .gitattributes
+
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Ignore binary files for merge conflicts
+.gitignore merge=binary

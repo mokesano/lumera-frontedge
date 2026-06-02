@@ -34,11 +34,38 @@ $(document).ready(function() {
         $textarea.after($toggle).after($preview);
         
         // Function convert markdown simple
+        function escapeHtml(text) {
+            return String(text)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function sanitizeUrl(url) {
+            var trimmed = String(url || '').trim();
+            if (/^(https?:|mailto:|tel:|\/|#)/i.test(trimmed)) {
+                return trimmed.replace(/"/g, '%22');
+            }
+            return '#';
+        }
+
         function convertToHtml(text) {
-            return text
+            var escaped = String(text)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+
+            return escaped
                 .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
                 .replace(/\*([^*]+)\*/g, '<em>$1</em>')
-                .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+                .replace(/\[([^\]]+)\]\(([^)]+)\)/g, function(match, label, url) {
+                    var safeUrl = /^(https?:|mailto:)/i.test(url) ? url : '#';
+                    return '<a href="' + safeUrl + '">' + label + '</a>';
+                })
                 .replace(/\n/g, '<br>');
         }
         

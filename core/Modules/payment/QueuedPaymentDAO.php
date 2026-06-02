@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\payment;
+
 /**
  * @file core.Modules.payment/QueuedPaymentDAO.inc.php
  *

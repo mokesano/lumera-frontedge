@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\form\validation;
+
 /**
  * @file core.Modules.form/validation/FormValidatorISSN.inc.php
  *

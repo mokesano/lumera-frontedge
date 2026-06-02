@@ -1837,18 +1837,28 @@ document.addEventListener("DOMContentLoaded", function() {
           containerElement.appendChild(highlightsElement);
         }
         
-        // Buat HTML untuk highlight sesuai struktur yang sudah ada
-        let html = '';
+        // Buat elemen highlight sesuai struktur yang sudah ada (aman dari XSS)
+        highlightsElement.innerHTML = '';
         
         for (let highlight of highlights) {
-          html += `
-            <li class="react-xocs-list-item">
-              <span class="list-label">• </span>
-              <span class="u-ml-16"><p>${highlight}</p></span>
-            </li>`;
+          const li = document.createElement('li');
+          li.className = 'react-xocs-list-item';
+
+          const labelSpan = document.createElement('span');
+          labelSpan.className = 'list-label';
+          labelSpan.textContent = '• ';
+
+          const contentSpan = document.createElement('span');
+          contentSpan.className = 'u-ml-16';
+
+          const p = document.createElement('p');
+          p.textContent = highlight;
+
+          contentSpan.appendChild(p);
+          li.appendChild(labelSpan);
+          li.appendChild(contentSpan);
+          highlightsElement.appendChild(li);
         }
-        
-        highlightsElement.innerHTML = html;
         
         // Tampilkan elemen highlight jika sebelumnya tersembunyi
         const highlightSection = document.getElementById('ab810');
@@ -2259,6 +2269,12 @@ $(document).ready(function() {
         show ? $('body').append(loadingSvg) : $('.loading-indicator').remove();
     };
 
+    const stripHtmlToText = value => {
+        const temp = document.createElement('div');
+        temp.innerHTML = value;
+        return (temp.textContent || '').trim();
+    };
+
     const extractTitle = content => {
         const yearPattern = /\b\d{4}[a-z]?\b/;
         const yearMatch = content.match(yearPattern);
@@ -2267,7 +2283,7 @@ $(document).ready(function() {
             const titleStart = content.indexOf('. ', yearIndex) + 2;
             let titleEnd = content.indexOf('. ', titleStart);
             if (titleEnd === -1) titleEnd = content.length;
-            return content.substring(titleStart, titleEnd).trim().replace(/<[^>]*>/g, '');
+            return stripHtmlToText(content.substring(titleStart, titleEnd));
         }
         return '';
     };
@@ -2387,10 +2403,21 @@ $(document).ready(function() {
                 });
             }
 
+            const isDoiHost = (rawUrl) => {
+                try {
+                    const normalizedUrl = rawUrl.startsWith('www.') ? ('https://' + rawUrl) : rawUrl;
+                    const parsedUrl = new URL(normalizedUrl);
+                    const host = parsedUrl.hostname.toLowerCase();
+                    return host === 'doi.org' || host.endsWith('.doi.org');
+                } catch (e) {
+                    return false;
+                }
+            };
+
             const httpMatches = content.match(/https?:\/\/[^\s]+|www\.[^\s]+/g);
             if (httpMatches) {
                 httpMatches.forEach(httpUrl => {
-                    if (!httpUrl.includes('doi.org')) addLinkWithLoading(referenceLinks, httpUrl, 'View Source', '<svg focusable="false" viewBox="0 0 8 8" height="20" aria-label="Opens in new window" class="icon icon-arrow-up-right-tiny arrow-external-link"><path d="M1.12949 2.1072V1H7V6.85795H5.89111V2.90281L0.784057 8L0 7.21635L5.11902 2.1072H1.12949Z"></path></svg>');
+                    if (!isDoiHost(httpUrl)) addLinkWithLoading(referenceLinks, httpUrl, 'View Source', '<svg focusable="false" viewBox="0 0 8 8" height="20" aria-label="Opens in new window" class="icon icon-arrow-up-right-tiny arrow-external-link"><path d="M1.12949 2.1072V1H7V6.85795H5.89111V2.90281L0.784057 8L0 7.21635L5.11902 2.1072H1.12949Z"></path></svg>');
                 });
             }
 

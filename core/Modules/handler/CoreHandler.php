@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace Lumera\Modules\handler;
+
 /**
  * @file core.Modules.core/CoreHandler.inc.php
  *
