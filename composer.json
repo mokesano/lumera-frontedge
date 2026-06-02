@@ -31,7 +31,7 @@
         "ext-xml": "*",
         "ext-zip": "*",
         "adodb/adodb-php": "^5.22",
-        "chillerlan/php-qrcode": "^4.4",
+        "chillerlan/php-qrcode": "^6.0",
         "ezyang/htmlpurifier": "^4.19",
         "guzzlehttp/guzzle": "^7.0",
         "midtrans/midtrans-php": "^2.6",
