@@ -498,7 +498,7 @@ function getArticleComponents() {
     for (const selector of abstractSelectors) {
       const abstractElement = document.querySelector(selector);
       if (abstractElement) {
-        components.abstract = abstractElement.innerHTML || abstractElement.content || '';
+        components.abstract = abstractElement.textContent || abstractElement.content || '';
         break;
       }
     }
@@ -510,11 +510,9 @@ function getArticleComponents() {
   }
 }
 
-// Fungsi bantu: mengubah string HTML menjadi teks polos
+// Fungsi bantu: mempertahankan teks polos tanpa mem-parse sebagai HTML
 function htmlToPlainText(htmlString) {
-  const div = document.createElement('div');
-  div.innerHTML = htmlString;
-  return div.textContent;
+  return typeof htmlString === 'string' ? htmlString : '';
 }
 
 // Fungsi utama untuk menampilkan highlight di halaman
