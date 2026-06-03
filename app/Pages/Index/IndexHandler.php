@@ -143,7 +143,7 @@ class IndexHandler extends Handler {
 
         } else {
             // 
-            // WIZDAM STATS 2: ROOT WIZDAM EDITORIAL SYSTEM
+            // WIZDAM STATS 2: ROOT LUMERA FRONTEDGE SYSTEM
             // 
 
             // --- TAMBAHKAN BLOK STATISTIK SITUS INI ---

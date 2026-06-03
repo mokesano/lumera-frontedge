@@ -1,6 +1,6 @@
 #!/bin/bash
 # =============================================================================
-# WIZDAM EDITORIAL 1.0 - PSR-4 COMPLIANCE MIGRATION SCRIPT
+# LUMERA FRONTEDGE 1.0 - PSR-4 COMPLIANCE MIGRATION SCRIPT
 # =============================================================================
 # Script ini akan:
 # 1. Rename folder dari lowercase ke PascalCase

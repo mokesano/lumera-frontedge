@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Pages\Copyeditor;
+namespace App\Pages\CopyEditor;
 
 
 /**

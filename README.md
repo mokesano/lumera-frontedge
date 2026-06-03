@@ -1,6 +1,6 @@
-# Lumera Frontiers
+# Lumera Frontedge
 
-Lumera Frontiers adalah platform open-source untuk manajemen editorial dan penerbitan ilmiah. Fokus repositori ini adalah modernisasi kode legacy menjadi struktur PHP modern berbasis Composer, PSR-4, dan PSR-12.
+Lumera Frontedge adalah platform open-source untuk manajemen editorial dan penerbitan ilmiah. Fokus repositori ini adalah modernisasi kode legacy menjadi struktur PHP modern berbasis Composer, PSR-4, dan PSR-12.
 
 ## Informasi Utama
 

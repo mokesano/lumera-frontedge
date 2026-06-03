@@ -1,6 +1,6 @@
-# Dokumentasi Lumera Frontiers
+# Dokumentasi Lumera Frontedge
 
-Folder ini berisi dokumentasi pendukung untuk Lumera Frontiers. Informasi utama proyek tersedia di `../README.md`.
+Folder ini berisi dokumentasi pendukung untuk Lumera Frontedge. Informasi utama proyek tersedia di `../README.md`.
 
 ## Isi Penting
 

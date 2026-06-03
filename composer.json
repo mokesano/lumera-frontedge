@@ -1,6 +1,6 @@
 {
     "name": "lumera/lumera-frontiers",
-    "description": "Lumera Frontiers - Modern Publisher Platform for Journal Management Framework Workflow and Publishing",
+    "description": "Lumera Frontedge - Modern Publisher Platform for Journal Management Framework Workflow and Publishing",
     "type": "project",
     "license": "GPL-3.0-only",
     "keywords": [
@@ -137,10 +137,10 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "@php -r \"echo 'Lumera Frontiers Platform installed successfully!\\n';\""
+            "@php -r \"echo 'Lumera Frontedge Platform installed successfully!\\n';\""
         ],
         "post-update-cmd": [
-            "@php -r \"echo 'Lumera Frontiers Platform updated successfully!\\n';\""
+            "@php -r \"echo 'Lumera Frontedge Platform updated successfully!\\n';\""
         ],
         "test": "phpunit",
         "cs-check": "@php scripts/cs-check.php",

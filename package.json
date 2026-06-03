@@ -1,7 +1,7 @@
 {
   "name": "lumera/lumera-frontiers",
   "version": "1.0.0",
-  "description": "Lumera Frontiers - Modern Publisher Platform for Journal Management Framework Workflow and Publishing",
+  "description": "Lumera Frontedge - Modern Publisher Platform for Journal Management Framework Workflow and Publishing",
   "private": true,
   "scripts": {
     "build": "npm run build:tinymce",

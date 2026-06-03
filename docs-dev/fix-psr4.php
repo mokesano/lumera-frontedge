@@ -1,6 +1,6 @@
 <?php
 /**
- * WIZDAM EDITORIAL 1.0 - PSR-4 AUTOLOADING FIX SCRIPT
+ * LUMERA FRONTEDGE 1.0 - PSR-4 AUTOLOADING FIX SCRIPT
  * 
  * Script ini akan:
  * 1. Rename semua file .inc.php menjadi .php
