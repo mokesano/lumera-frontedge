@@ -3,9 +3,8 @@ declare(strict_types=1);
 
 namespace App\Pages\About;
 
-
 /**
- * @file pages/about/AboutHandler.inc.php
+ * @file Pages/About/AboutHandler.inc.php
  *
  * Copyright (c) 2013-2019 Sangia Publishing House
  * Copyright (c) 2003-2019 Rochmady and Wizdam Team
@@ -15,8 +14,6 @@ namespace App\Pages\About;
  * @ingroup pages_editor
  *
  * @brief Handle requests for editor functions.
- *
- * [WIZDAM EDITION] Refactored for PHP 8.1+ Strict Compliance
  */
 
 import('core.Modules.handler.Handler');
