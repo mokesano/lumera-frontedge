@@ -114,7 +114,7 @@ class CitationApiHandler extends CoreHandler {
             }
         } while ($continue);
 
-        // Free the process slot.
+        // Free the process field.
         $processDao->deleteObjectById($processId);
 
         // This request returns just a (private) status message.
