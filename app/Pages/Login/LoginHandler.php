@@ -608,7 +608,7 @@ class LoginHandler extends CoreLoginHandler {
 
         $userSettingsDao->deleteSetting($user->getId(), 'google_id');
 
-        // Remove all Google email slots
+        // Remove all Google email fields to prevent orphaned emails that may block future linking with a different Google account
         for ($i = 0; $i <= 4; $i++) {
             $userSettingsDao->deleteSetting($user->getId(), 'google_email_' . $i);
         }
