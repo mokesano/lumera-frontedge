@@ -100,8 +100,6 @@
             "**/node_modules/",
             "**/tests/",
             "**/*.inc.php",
-            "**/*_BAK",
-            "**/*_WIZDAM",
             "core/Modules/cliTool/CliTool.php",
             "core/Modules/xml/XMLParser.php",
             "core/Modules/rt/RTStruct.php",
