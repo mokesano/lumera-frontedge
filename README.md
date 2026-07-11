@@ -4,7 +4,7 @@ Lumera Frontedge adalah platform open-source untuk manajemen editorial dan pener
 
 ## Informasi Utama
 
-- **Nama paket:** `lumera/lumera-frontiers`
+- **Nama paket:** `lumera/lumera-frontedge`
 - **Tipe proyek:** aplikasi PHP
 - **Lisensi:** GPL-3.0-only
 - **PHP:** `^8.4`
