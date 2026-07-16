@@ -655,7 +655,7 @@ class CoreRequest {
     /**
      * Get the value of a GET/POST variable generated using the Smarty
      * html_select_date and/or html_select_time function.
-     * @return Date
+     * @return int|null
      */
     public static function getUserDateVar($prefix, $defaultDay = null, $defaultMonth = null, $defaultYear = null, $defaultHour = 0, $defaultMinute = 0, $defaultSecond = 0) {
         // Ambil dari $_REQUEST agar tidak terpengaruh oleh state $instance

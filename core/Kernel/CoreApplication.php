@@ -537,7 +537,7 @@ class CoreApplication {
         }
         assert((bool) preg_match('/^[a-zA-Z_]+$/', $name));
         
-        $constants =& self::getExposedConstants();
+        $constants = self::getExposedConstants();
         $constants[$name] = $value;
     }
 
@@ -547,7 +547,7 @@ class CoreApplication {
      * Returns REFERENCE to support defineExposedConstant modification.
      * @return array
      */
-    public static function &getExposedConstants(): array {
+    public static function getExposedConstants(): array {
         static $exposedConstants = [];
         return $exposedConstants;
     }
@@ -560,6 +560,7 @@ class CoreApplication {
     public function getJSLocaleKeys(): array {
         return ['form.dataHasChanged'];
     }
+    
 }
 
 /**
@@ -569,7 +570,8 @@ class CoreApplication {
  * @param mixed $value
  * @return void
  */
-function define_exposed(string $name, $value): void {
+function define_exposed(string $name, mixed $value): void {
     CoreApplication::defineExposedConstant($name, $value);
 }
+
 ?>
